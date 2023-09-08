@@ -16,10 +16,8 @@ import androidx.compose.material3.Slider
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -42,8 +40,6 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun PlotSurface() {
-//    var xPercent by rememberSaveable { mutableStateOf(0.5f) }
-//    var yPercent by rememberSaveable { mutableStateOf(0.5f) }
     var xPercentage: Float by remember { mutableStateOf(0.5f) }
     var yPercentage: Float by remember { mutableStateOf(0.5f) }
 
@@ -51,10 +47,6 @@ fun PlotSurface() {
         modifier = Modifier.fillMaxSize(),
         color = Color.White
     ) {
-        // TODO Build out the plot surface
-        //  This should include a Column composable that
-        //  includes a Map, and two MapSlider composables
-        //  (one slider for each axis).
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
@@ -95,10 +87,6 @@ fun PlotSurfacePreview() {
 
 @Composable
 fun Map(xPercent: Float, yPercent: Float, modifier: Modifier = Modifier) {
-    // TODO fill out the square map here.
-    //  Create a Box composable with a size of 300.dp
-    //  and then create an inner Box composable
-    //  with a clip shape of CircleShape.
     Box(
         Modifier
             .size(width = 300.dp, height = 300.dp)
