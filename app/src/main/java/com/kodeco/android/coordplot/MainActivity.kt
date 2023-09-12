@@ -3,6 +3,7 @@ package com.kodeco.android.coordplot
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,6 +24,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.kodeco.android.coordplot.ui.theme.MyApplicationTheme
@@ -92,12 +95,13 @@ fun Map(xPercent: Float, yPercent: Float, modifier: Modifier = Modifier) {
             .size(width = 300.dp, height = 300.dp)
             .background(Color.Yellow)
     ) {
-        Box(
+        Image(
+            painter = painterResource(id = R.drawable.resource_super),
+            contentDescription = "Super man",
+            contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(36.dp)
                 .offset((xPercent * 300 - 18).dp, (yPercent * 300 - 18).dp)
-                .clip(shape = CircleShape)
-                .background(Color.Red)
         )
     }
 }
