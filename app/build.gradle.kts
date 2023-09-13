@@ -71,4 +71,5 @@ dependencies {
     implementation(libs.bundles.compose.ui)
     implementation(libs.bundles.androidx.activity)
     implementation(libs.fonts)
+    implementation ("androidx.core:core-splashscreen:1.0.1")
 }
