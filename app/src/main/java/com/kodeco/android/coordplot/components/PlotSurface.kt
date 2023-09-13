@@ -5,7 +5,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Slider
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -40,7 +42,9 @@ fun PlotSurface() {
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier
+                .verticalScroll(rememberScrollState())
         ) {
             Map(
                 xPercent = xPercentage,
@@ -55,10 +59,7 @@ fun PlotSurface() {
                     text = "X axis: ${getRounded(xPercentage)}",
                     modifier = Modifier
                         .padding(8.dp)
-                        .size(
-                            width = 120.dp,
-                            height = 20.dp
-                        )
+                        .width(120.dp)
                 )
                 Slider(
                     value = xPercentage,
@@ -80,10 +81,7 @@ fun PlotSurface() {
                     text = "Y axis: ${getRounded(yPercentage)}",
                     modifier = Modifier
                         .padding(8.dp)
-                        .size(
-                            width = 120.dp,
-                            height = 20.dp
-                        )
+                        .width(120.dp)
                 )
                 Slider(
                     value = yPercentage,
