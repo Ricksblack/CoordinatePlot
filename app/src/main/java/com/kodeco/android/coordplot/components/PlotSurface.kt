@@ -12,7 +12,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -25,8 +25,8 @@ import java.text.DecimalFormat
 
 @Composable
 fun PlotSurface() {
-    var xPercentage: Float by remember { mutableStateOf(0.5f) }
-    var yPercentage: Float by remember { mutableStateOf(0.5f) }
+    var xPercentage: Float by rememberSaveable { mutableStateOf(0.5f) }
+    var yPercentage: Float by rememberSaveable { mutableStateOf(0.5f) }
 
     fun getRounded(value: Float) : String? {
         val format = DecimalFormat("#.#")
