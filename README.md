@@ -9,3 +9,5 @@ When rotating the device sliders weren't keeping the state, was updated to remem
 When the device is in landscape mode Yslider wasn't visible, was added verticalScroll to column to make it scrollable and then second slider was visible. 
 
 Was discovered that we can add modifier .width(16.dp) instead of .size(width:height:), so it was updated.
+
+Updated handling for landscape mode, rearranged the UI to see the sliders. 
