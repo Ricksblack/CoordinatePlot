@@ -2,4 +2,11 @@
 <resources>
 
     <style name="Theme.MyApplication" parent="android:Theme.Material.Light.NoActionBar" />
+
+<!--    Splash screen Theme-->
+    <style name="Theme.CustomSplashScreenTheme" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/purple_200</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splashicon</item>
+        <item name="postSplashScreenTheme">@style/Theme.MyApplication</item>
+    </style>
 </resources>
